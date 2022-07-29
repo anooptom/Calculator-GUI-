@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class calculator extends Frame {
+public class calculator extends Frame  {
     
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14;
     Label l;
@@ -46,6 +46,12 @@ public class calculator extends Frame {
         add(b9);   add(b10);  add(b11);  add(b12); 
         add(b13);  add(b14);
         add(l);
+
+        addWindowListener (new WindowAdapter(){
+              public void windowClosing(WindowEvent e){
+			dispose();
+		}
+	});
         
         setTitle("CALCULATOR");
         setLayout(null);
