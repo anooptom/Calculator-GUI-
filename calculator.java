@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class calculator extends Frame  {
+public class calculator extends Frame  implements ActionListener{
     
     Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14;
     Label l;
@@ -38,7 +38,22 @@ public class calculator extends Frame  {
         b13.setBounds(250,150,30,30);
         b14.setBounds(70,300,100,30);
         
-        l= new Label("RESULTS");
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+        b7.addActionListener(this);
+        b8.addActionListener(this);
+        b9.addActionListener(this);
+        b10.addActionListener(this);
+        b11.addActionListener(this);
+        b12.addActionListener(this);
+        b13.addActionListener(this);
+        b14.addActionListener(this);
+        
+        l= new Label("");
         l.setBounds(50,100,150,30);
         
         add(b1);   add(b2);   add(b3);   add(b4);     
@@ -57,6 +72,51 @@ public class calculator extends Frame  {
         setLayout(null);
         setSize(350,500);
         setVisible(true);
+        
+    }
+    
+    public void actionPerformed(ActionEvent e){
+        
+        String last=l.getText();    
+    
+        if(e.getSource() ==b1)
+        l.setText(last+"1");
+        
+        else if(e.getSource() ==b2)
+        l.setText(last+"2");
+        
+        else if(e.getSource() ==b3)
+        l.setText(last+"3");
+        
+        else if(e.getSource() ==b4)
+        l.setText(last+"4");
+        
+        else if(e.getSource() ==b5)
+        l.setText(last+"5");
+        
+        else if(e.getSource() ==b6)
+        l.setText(last+"6");
+        
+        else if(e.getSource() ==b7)
+        l.setText(last+"7");
+        
+        else if(e.getSource() ==b8)
+        l.setText(last+"8");
+        
+        else if(e.getSource() ==b9)
+        l.setText(last+"9");
+        
+        else if(e.getSource() ==b10)
+        l.setText(last+"+");
+        
+        else if(e.getSource() ==b11)
+        l.setText(last+"-");
+        
+        else if(e.getSource() ==b12)
+        l.setText(last+"*");
+        
+        else if(e.getSource() ==b13)
+        l.setText(last+"/");
         
     }
     
